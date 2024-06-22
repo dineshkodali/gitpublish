@@ -1,0 +1,16 @@
+create an app using "npx create {app-name}"
+then open app by "cd {app-name}"
+run command "npm start"
+install gh-pages in root by using "npm install gh-pages --save-dev"
+push the code into repository as default 
+then run the react app, if success then follow next steps 
+
+Edit the package.json file
+Made these changes:
+    add homepage in 2nd line like ["homepage": "{github-public-link}"]
+    then add ["predeploy": "npm run build"] && ["deploy": "gh-pages -d build"] inside the scripts
+
+and save the changes and push into repository
+
+After successfull run this command "npm run deploy"
+(it will run and deploy the build code into github and runs the react app in public link)
