@@ -1,24 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const [fileContent, setFileContent] = useState('');
-
-  useEffect(() => {
-    fetch('/Process.txt')
-      .then(response => response.text())
-      .then(text => setFileContent(text))
-      .catch(error => console.error('Error fetching the text file:', error));
-  }, []);
-
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Welcome to React</h1>
         <p>
-          Github Running Serverless.
+          Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
           className="App-link"
@@ -28,8 +19,14 @@ function App() {
         >
           Learn React
         </a>
-        <h2>Content of the Text File:</h2>
-        <pre>{fileContent}</pre>
+        <h2>Text File Link:</h2>
+        <a
+          href="/sample.txt"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open sample.txt
+        </a>
       </header>
     </div>
   );
